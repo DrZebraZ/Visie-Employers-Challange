@@ -1,0 +1,5 @@
+flask==2.2.5
+flask_cors
+python-dotenv==0.21.0
+mysql-connector-python
+python-dateutil

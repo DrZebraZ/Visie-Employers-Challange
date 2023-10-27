@@ -1,0 +1,39 @@
+version: '3.9'
+services:
+  api_nodejs:
+    image: visie:api
+    container_name: api-nodejs
+    restart: always
+    ports:
+    - "3001:3001"
+    build:
+      dockerfile: ./api/Dockerfile
+  
+  api_flask:
+    image: visie:api_flask
+    container_name: api-flask
+    restart: always
+    ports:
+    - "3001:3001"
+    build:
+      dockerfile: ./api_flask/Dockerfile
+
+  api_fastapi:
+    image: visie:api_fastapi
+    container_name: api-fastapi
+    restart: always
+    ports:
+    - "3001:3001"
+    build:
+      dockerfile: ./api_fastapi/Dockerfile
+
+  app_react:
+    image: visie:app
+    container_name: app-react
+    restart: always
+    ports:
+    - "3000:3000"
+    build:
+      dockerfile: ./app/Dockerfile
+    
+  

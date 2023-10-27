@@ -1,0 +1,5 @@
+fastapi
+uvicorn[standart]
+python-dotenv
+mysql-connector-python
+python-dateutil
