@@ -34,7 +34,7 @@ class EmployeeService extends ApiService {
     try{
       const result = await this.post('/create', credenciais)
       return result
-    }catch(e){
+    }catch(e:any){
       return new Error(e)
     }
     
