@@ -19,7 +19,7 @@ class ApiService {
         console.log("REQUEST")
         console.log(response)
         return response
-      }catch(err){ 
+      }catch(err:any){ 
         console.log("REQUEST ERR")
         console.log(err)
         return err.response.data
@@ -31,7 +31,7 @@ class ApiService {
       const requestUrl = `${this.apiUrl}${url}`
       const response = await httpClient.put(requestUrl, objeto)
       return response
-    }catch(err){
+    }catch(err:any){
       console.log(err)
       return err.response.data
     }
@@ -42,7 +42,7 @@ class ApiService {
       const requestUrl = `${this.apiUrl}${url}`
       const response = await httpClient.delete(requestUrl)
       return response
-    }catch(err){
+    }catch(err:any){
       console.log(err)
       if (err.response.data[0]){
         return err.response.data[0]
@@ -53,13 +53,14 @@ class ApiService {
     
 
   async get(url:string){
-    const requestUrl = `${this.apiUrl}${url}`
-    return httpClient.get(requestUrl).then(response => {
+    try{
+      const requestUrl = `${this.apiUrl}${url}`
+      const response = await httpClient.get(requestUrl)
       return response
-    }).catch(err => {
+    }catch(err:any){
       console.log(err)
       return err.response
-    })
+    }
   }
 }
 export default ApiService
