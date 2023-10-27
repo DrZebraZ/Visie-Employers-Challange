@@ -3,7 +3,7 @@ Desafio Visie -> resolução Luis Andres
 Primeiramente antes de tudo gostaria de agradecer pela oportunidade! 
 Foi muito divertido codar este sistema. 
 
-Ja deixando claro não lembrava muito do flask e nunca havia utilizado o FastAPI
+Não lembrava muito do flask e pouco vi sobre o FastAPI
 Decidi fazer o back-end tanto em NodeJS com o Fastify quanto Python com o Flask e o FastAPI já que vocês trabalham com estas stacks
 Para o front foi React ---> fazia alguns meses que não utilizava também
 o que estava mais aquecido aqui era o NodeJS
