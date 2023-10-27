@@ -1,4 +1,5 @@
 fastapi
+pydantic
 uvicorn[standart]
 python-dotenv
 mysql-connector-python
