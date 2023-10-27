@@ -1,6 +1,7 @@
 import React from 'react';
+import { IconType } from 'react-icons'
 
-const IconButton = ({ icon:Icon }) => {
+const IconButton = ({ icon:Icon }:{icon:IconType}) => {
 
   return (
     <button style={{ border: 'none', background: 'none', cursor: 'pointer' }}>

@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { IconType } from 'react-icons'
 
-const IconButtonFunction = ({ icon:Icon, redirect, onClick}) => {
-  const handleClick = (event) => {
+const IconButtonFunction = ({ icon:Icon, redirect, onClick}:{icon: IconType, redirect:string, onClick:any}) => {
+  const handleClick = (event:any) => {
     event.stopPropagation(); // Stop the event from propagating up the DOM hierarchy
     onClick(); // Call the provided onClick handler
   };
