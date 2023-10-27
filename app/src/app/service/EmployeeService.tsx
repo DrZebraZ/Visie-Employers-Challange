@@ -43,7 +43,7 @@ class EmployeeService extends ApiService {
   async getAll() {
     try{
       return await this.get('/all')
-    }catch(e){
+    }catch(e:any){
       console.log(e)
     }
   }
@@ -51,7 +51,7 @@ class EmployeeService extends ApiService {
   async getUnique(id:number) {
     try{
       return await this.get(`/${id}`)
-    }catch(e){
+    }catch(e:any){
       console.log(e)
     }
   }
@@ -61,7 +61,7 @@ class EmployeeService extends ApiService {
     try{
       const response = await this.put(`/update/${id}`, credenciais)
       return response
-    }catch(e){
+    }catch(e:any){
       console.log(e)
     }
     
@@ -71,7 +71,7 @@ class EmployeeService extends ApiService {
     try{
       const response = await this.delete(`/delete/${id}`)
       return response
-    }catch(e){
+    }catch(e:any){
       console.log(e)
     }
   }
@@ -80,13 +80,4 @@ class EmployeeService extends ApiService {
 console.log('INSTANCIANDO PRODUTO SERVICE')
 const employeeService = new EmployeeService()
 export default employeeService
-
-
-export async function onEditClickHandler(val:EmployeeSimpleData){
-  window.location.href = `/employee/edit/${val.id_pessoa}`
-}
-
-export async function onSearchClickHandler(val:EmployeeSimpleData){
-  window.location.href = `/employee/${val.id_pessoa}`
-}
 
