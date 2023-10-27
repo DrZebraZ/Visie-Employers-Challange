@@ -10,7 +10,7 @@ o que estava mais aquecido aqui era o NodeJS
 Enfim... boa validação do sistema!!!
 
 Se já tiver o Docker e o docker-compose vai ser mais fácil...
-
+Passo a passo sem docker no fim do documento.
 
 Segue o passo a passo que é para ser sucesso! 
 
@@ -103,3 +103,37 @@ DELETE: localhost:3001/employee/delete/{user_id}
 Obrigado!!!
 Lembrando que estou disponível para sanar dúvidas.
 Luis Andres
+
+
+
+
+
+
+Passo a passo sem docker:
+1 - setar as variáveis de ambiente do Node Flask e FastAPI
+2 - configurar os sistemas e rodar cada um:
+  reactjs:
+    cd /app    (entrar pasta react)
+    yarn install
+    yarn start
+
+  nodejs:
+    cd /api    (entrar na pasta node)
+    npm install
+    npm run start:dev
+
+  pyFlask:
+    cd /api_flask (entrar na pasta do flask)
+    python3 -m venv venv   (criar a venv)
+    source venv/bin/activate
+    pip install -r requirements.txt
+    python3 src/run.py
+
+  pyFastAPI:
+    cd /api_fastapi (entrar pasta do fastapi)
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    python3 src/main.py
+
+  
