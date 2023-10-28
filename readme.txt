@@ -36,6 +36,9 @@ Rodar o sistema:
 3 - Agora com os containers buildados e criados ativar o container do React (app-react) e ativar o da a api que quiser testar (1 por vez)
   não configurei o React para buscar a API por outra porta então ele está apenas fazendo request na API localhost:3001
 
+
+para testar o front na melhor forma aconselho primeiramente utilizando o NodeJS
+
   REACT:
     up: docker start app-react 
     down: docker stop app-react
