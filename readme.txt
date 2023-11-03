@@ -1,25 +1,5 @@
-Desafio Visie -> resolução Luis Andres
-
-Primeiramente antes de tudo gostaria de agradecer pela oportunidade! 
-Foi muito divertido codar este sistema. 
-
-Não lembrava muito do flask e pouco vi sobre o FastAPI
-Decidi fazer o back-end tanto em NodeJS com o Fastify quanto Python com o Flask e o FastAPI já que vocês trabalham com estas stacks
-Para o front foi React ---> fazia alguns meses que não utilizava também
-o que estava mais aquecido aqui era o NodeJS
-Enfim... boa validação do sistema!!!
-
-Se já tiver o Docker e o docker-compose vai ser mais fácil...
-Passo a passo sem docker no fim do documento.
-
-Segue o passo a passo que é para ser sucesso! 
-
-
-Qualquer duvida/pergunta só chamar
-
-
 Rodar o sistema:
-
+DOCKER:
 1 - Configurar o .env do NodeJS, PyFastAPI e do PyFlask:
   possui o .env.example criar um arquivo .env copiar tudo para ele e preencher as variáveis.
   o banco de dados utilizado foi o disponibilizado pela empresa
@@ -34,10 +14,6 @@ Rodar o sistema:
 
 
 3 - Agora com os containers buildados e criados ativar o container do React (app-react) e ativar o da a api que quiser testar (1 por vez)
-  não configurei o React para buscar a API por outra porta então ele está apenas fazendo request na API localhost:3001
-
-
-para testar o front na melhor forma aconselho primeiramente utilizando o NodeJS
 
   REACT:
     up: docker start app-react 
@@ -62,12 +38,36 @@ para testar o front na melhor forma aconselho primeiramente utilizando o NodeJS
     acessar: localhost:3001/docs
 
 
-Endpoints das apis para teste em Postman/Insomnia:
+Passo a passo sem docker:
+1 - setar as variáveis de ambiente do Node Flask e FastAPI
+2 - configurar os sistemas e rodar cada um:
+  reactjs:
+    cd /app    (entrar pasta react)
+    yarn install
+    yarn start
 
-Todas apis possuem mesmo endpoints possuindo uma ou outra diferença no retorno de erro
-PS: o front está configurado para mandar para o back-end a data da forma correta e vice-versa
-para editar ou criar por fora não se pode mandar em formato dd/MM/yyyy ele tem que ser em dateIsoString
-no front aparece estar criando como dd/MM/yyyy mas é alterado antes do envio
+  nodejs:
+    cd /api    (entrar na pasta node)
+    npm install
+    npm run start:dev
+
+  pyFlask:
+    cd /api_flask (entrar na pasta do flask)
+    python3 -m venv venv   (criar a venv)
+    source venv/bin/activate
+    pip install -r requirements.txt
+    python3 src/run.py
+
+  pyFastAPI:
+    cd /api_fastapi (entrar pasta do fastapi)
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    python3 src/main.py
+
+
+
+Endpoints das apis para teste em Postman/Insomnia:
 
 - Criar Usuário:
 POST: localhost:3001/employee/create
@@ -102,41 +102,5 @@ PUT: localhost:3001/employee/update/{user_id}
 - Deletar Usuário:
 DELETE: localhost:3001/employee/delete/{user_id}
 
-
-Obrigado!!!
-Lembrando que estou disponível para sanar dúvidas.
-Luis Andres
-
-
-
-
-
-
-Passo a passo sem docker:
-1 - setar as variáveis de ambiente do Node Flask e FastAPI
-2 - configurar os sistemas e rodar cada um:
-  reactjs:
-    cd /app    (entrar pasta react)
-    yarn install
-    yarn start
-
-  nodejs:
-    cd /api    (entrar na pasta node)
-    npm install
-    npm run start:dev
-
-  pyFlask:
-    cd /api_flask (entrar na pasta do flask)
-    python3 -m venv venv   (criar a venv)
-    source venv/bin/activate
-    pip install -r requirements.txt
-    python3 src/run.py
-
-  pyFastAPI:
-    cd /api_fastapi (entrar pasta do fastapi)
-    python3 -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
-    python3 src/main.py
 
   
